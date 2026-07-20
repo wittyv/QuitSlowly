@@ -10,9 +10,9 @@
 * 6、新增弹窗设置，可以设置退出的时间长度（0.5-10s）均可滑动设置；
 * 7、提供新的logo图标，支持深色模式，符合macos26整体视觉。
 
+![Preview](./img/image.png?raw=true "QuitSlowly.app preview")
 ![Preview](./img/preview.gif?raw=true "QuitSlowly.app preview")
 ![Preview](./img/logo.png?raw=true "QuitSlowly.app preview")
-![Preview](./img/image.png?raw=true "QuitSlowly.app preview")
 A macOS app that adds a global delay of 1 second to the Cmd-Q shortcut. In
 other words, you have to hold down Cmd-Q for 1 second before an application
 will quit.
