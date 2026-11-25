@@ -40,129 +40,17 @@ feature, except it is now available on every app!
 
 ## Download & Install
 
-Pre-built binaries can be downloaded from the [releases page](https://github.com/dteoh/SlowQuitApps/releases).
+Pre-built binaries can be downloaded from the releases page.
 
 Unzip, drag the app to Applications, and then run it. You can optionally
 choose to automatically start the application on login.
 
-### Homebrew
-
-If you wish to install the application from Homebrew:
-
-```
-$ brew tap dteoh/sqa
-$ brew install --cask slowquitapps
-```
-
-The application will live at `/Applications/SlowQuitApps.app`.
-
-Updating the app:
-
-```
-$ brew update
-$ brew reinstall --cask slowquitapps
-$ killall SlowQuitApps
-```
-
-Then relaunch the application.
-
-Or using [brew-cask-upgrade](https://github.com/buo/homebrew-cask-upgrade):
-
-```
-$ brew cu slowquitapps
-```
-
-Installing the app through Homebrew will add a script called `sqa` accessible
-from the command line. To use this tool, the main app must first be given
-permissions to run.
-
-
-### Post-update Maintenance
-
-Unfortunately, after upgrading SQA, you will have to reset accessibility
-permissions for the app. Go to System Preferences -> Security & Privacy ->
-Privacy -> Accessibility. Remove SlowQuitApps from the list, then add it back
-to the list again.
-
-### Compatibility
-
-The app is currently developed on Mojave and only support for Mojave can be
-provided.
-
-* Mavericks (10.9) to High Sierra (10.13) support: please download version 0.5.0
-* Mountain Lion (10.8) support: please download version 0.4.0
-
-## Customization
-
-You must exit and relaunch SlowQuitApps after making customizations.
-
-To exit the app:
-
-```
-$ killall SlowQuitApps
-```
-
-All of the following tasks can be done more conveniently using the `sqa`
-script. This script is automatically available from the command line when the
-app is installed through Homebrew.
-
-### Changing default delay
-
-The currently set delay can be reviewed with:
-
-    $ defaults read com.dteoh.SlowQuitApps
-
-To change the delay to 5 seconds for example, open up Terminal app and
-run the following command:
-
-    $ defaults write com.dteoh.SlowQuitApps delay -int 5000
-
-The delay is specified in milliseconds.
-
-### Whitelisting applications
-
-Whitelisted apps will be sent the Cmd-Q keypress directly.
-
-To whitelist an app, start by locating its bundle ID. For example, to whitelist
-the "Notes" application:
-
-    $ osascript -e 'id of app "Notes"'
-    com.apple.Notes
-    $ defaults write com.dteoh.SlowQuitApps whitelist -array-add com.apple.Notes
-
-To reset the whitelist:
-
-    $ defaults delete com.dteoh.SlowQuitApps whitelist
-
-To check whitelisted apps:
-
-    $ defaults read com.dteoh.SlowQuitApps whitelist
-
-#### Blacklist mode
-
-The whitelist can be used to only allow SlowQuitApps to handle Cmd-Q for those
-selected applications. To switch on this mode:
-
-    $ defaults write com.dteoh.SlowQuitApps invertList -bool YES
-
-In this mode, non-whitelisted apps will be sent the Cmd-Q keypress directly.
-
-To switch off this mode:
-
-    $ defaults delete com.dteoh.SlowQuitApps invertList
-
-### Hide overlay
-
-By default, an overlay with an indicator of the time remaining until the app gets closed appears. To hide this overlay, run the following command:
-
-    $ defaults write com.dteoh.SlowQuitApps displayOverlay -bool NO
-
 ## License
 
 ```
-SlowQuitApps
+QuitSlowlyApps
 
-Copyright (C) 2020 Douglas Teoh
+Copyright (C) 2026 witty
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -175,13 +63,5 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License along
-with this program; if not, write to the Free Software Foundation, Inc.,
-51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+with this program;
 ```
-
-### App Icon
-
-The app icon is a contribution courtesy of [@fancyme][1] ([#35][2]).
-
-[1]: https://github.com/fancyme
-[2]: https://github.com/dteoh/SlowQuitApps/issues/35
